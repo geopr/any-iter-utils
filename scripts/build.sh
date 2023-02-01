@@ -3,7 +3,7 @@
 compile() {
   echo "Compiling $1"
 
-  tsc -p tsconfig.build.$1.json && npx tsc-alias -p tsconfig.build.cjs.json
+  tsc -p tsconfig.build.$1.json && npx tsc-alias -p tsconfig.build.$1.json
 
   echo "Done"
 }
