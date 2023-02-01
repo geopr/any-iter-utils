@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "moduleResolution": "nodenext",
+    "lib": ["esnext", "dom"],
+    "baseUrl": "src",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true
+  },
+
+  "include": ["src", "prelude.d.ts"],
+
+  "exclude": ["node_modules", "dist"]
+}

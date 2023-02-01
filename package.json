@@ -1,0 +1,85 @@
+{
+  "name": "any-iter-utils",
+  "version": "1.0.0",
+  "license": "MIT",
+  "description": "API for working with Iterable and AsyncIterable objects and some useful container types",
+  "homepage": "https://github.com/geopr/any-iter-utils",
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint --color --max-warnings 0 --ext .ts src",
+    "build": "./scripts/build.sh",
+    "prepare": "husky install"
+  },
+  "files": [
+    "lib",
+    "types",
+    "prelude.d.ts",
+    "prelude.js"
+  ],
+  "exports": {
+    ".": {
+      "import": "./lib/esm/index.js",
+      "require": "./lib/cjs/index.js",
+      "types": "./types/index.d.ts"
+    },
+    "./prelude": {
+      "import": "./prelude.js",
+      "require": "./prelude.js",
+      "types": "./prelude.d.ts"
+    },
+    "./containers/*": {
+      "import": "./lib/esm/containers/*/index.js",
+      "require": "./lib/cjs/containers/*/index.js",
+      "types": "./types/containers/*/index.d.ts"
+    },
+    "./containers": {
+      "import": "./lib/esm/containers/index.js",
+      "require": "./lib/cjs/containers/index.js",
+      "types": "./types/containers/index.d.ts"
+    },
+    "./combinators": {
+      "import": "./lib/esm/combinators/index.js",
+      "require": "./lib/cjs/combinators/index.js",
+      "types": "./types/combinators/index.d.ts"
+    },
+    "./collectors": {
+      "import": "./lib/esm/collectors/index.js",
+      "require": "./lib/cjs/collectors/index.js",
+      "types": "./types/collectors/index.d.ts"
+    }
+  },
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/esm/index.js",
+  "types": "./types/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/geopr/any-iter-utils.git"
+  },
+  "bugs": {
+    "url": "https://github.com/geopr/any-iter-utils/issues"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "keywords": [
+    "iterables",
+    "async iterables",
+    "iterator helpers",
+    "container types",
+    "containers"
+  ],
+  "author": "George Prokhorov prohorovgosa@gmail.com",
+  "devDependencies": {
+    "@commitlint/cli": "^17.4.2",
+    "@commitlint/config-conventional": "^17.4.2",
+    "@types/jest": "^29.2.5",
+    "@typescript-eslint/eslint-plugin": "^5.50.0",
+    "@typescript-eslint/parser": "^5.50.0",
+    "eslint": "^8.33.0",
+    "husky": "^8.0.3",
+    "jest": "^29.3.1",
+    "ts-jest": "^29.0.5",
+    "tsc-alias": "^1.8.2",
+    "typescript": "^4.9.4"
+  }
+}

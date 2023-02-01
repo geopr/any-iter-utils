@@ -1,0 +1,22 @@
+name: Release
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  release:
+    permissions:
+      contents: write
+      pull-requests: write
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: google-github-actions/release-please-action@v3
+        name: Releasing a new version
+        with:
+          with: ${{ secrets.GITHUB_TOKEN }}
+          release-type: node
+          package-name: any-iter-utils
+          default-branch: main

@@ -1,0 +1,31 @@
+name: Building the project
+
+on:
+  push:
+    branches: [main]
+
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [latest]
+
+    steps:
+      - uses: actions/checkout@v3
+        name: Checking out with node version ${{ matrix.node-version }}
+
+      - uses: actions/setup-node@v3
+        name: Setting up node
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - run: npm ci
+        name: Installing deps
+
+      - run: npm run build
+        name: Building the project
