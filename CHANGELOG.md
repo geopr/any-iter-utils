@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/geopr/any-iter-utils/compare/v1.0.1...v1.0.2) (2023-02-01)
+
+
+### Bug Fixes
+
+* compiling declaration files ([52b259c](https://github.com/geopr/any-iter-utils/commit/52b259c533febaaa02f61e0cb36c5197f3939fa2))
+
 ## [1.0.1](https://github.com/geopr/any-iter-utils/compare/v1.0.0...v1.0.1) (2023-02-01)
 
 
