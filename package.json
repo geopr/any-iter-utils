@@ -1,6 +1,6 @@
 {
   "name": "any-iter-utils",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "description": "API for working with Iterable and AsyncIterable objects and some useful container types",
   "homepage": "https://github.com/geopr/any-iter-utils",
