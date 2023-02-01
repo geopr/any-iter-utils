@@ -1,4 +1,4 @@
-import { Result, SyncIter } from 'containers';
+import { Result, SyncIter } from '../../containers';
 import type { MatchObject, Traits } from './interface';
 /**
  * This class represents two states: a value either exists or not

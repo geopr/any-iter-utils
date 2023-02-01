@@ -1,4 +1,4 @@
-import type { TuplesFromIters } from 'combinators';
+import type { TuplesFromIters } from '../../combinators';
 /**
  * does cartesian product for the specified `Iterable` objects
  *

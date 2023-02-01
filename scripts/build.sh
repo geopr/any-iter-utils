@@ -8,14 +8,6 @@ compile() {
   echo "Done"
 }
 
-emit_declarations() {
-  echo "Emitting declarations..."
-
-  tsc -p tsconfig.build.declarations.json
-
-  echo "Done"
-}
-
 prepare() {
   echo "Cleaning up the previous lib folder..."
 
@@ -26,7 +18,6 @@ prepare() {
 
 prepare
 
-emit_declarations
-
 compile cjs
 compile esm
+compile declarations

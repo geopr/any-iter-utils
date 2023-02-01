@@ -1,6 +1,6 @@
-import type { Collectable } from 'collectors';
-import type { ItersValues, TuplesFromIters } from 'combinators';
-import type { Option, SyncPromise } from 'containers';
+import type { Collectable } from '../../collectors';
+import type { ItersValues, TuplesFromIters } from '../../combinators';
+import type { Option, SyncPromise } from '../../containers';
 import type { PickIter, PickCollectResult, FlatIterable, GetNativeIterable, PromisifyValue } from './interface';
 import type { SyncIter } from './index';
 /**

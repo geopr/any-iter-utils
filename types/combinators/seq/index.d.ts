@@ -1,4 +1,4 @@
-import type { ItersValues } from 'combinators/interface';
+import type { ItersValues } from '../../combinators/interface';
 /**
  * The function yields values of all passed `Iterable` objects
  *

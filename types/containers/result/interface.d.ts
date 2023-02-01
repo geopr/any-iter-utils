@@ -1,4 +1,4 @@
-import type { Matchable, IntoIter, Unwrapable, PartialUnwrappable, Monad, PartialMonad, Into, Andable, Orable, Option } from 'containers';
+import type { Matchable, IntoIter, Unwrapable, PartialUnwrappable, Monad, PartialMonad, Into, Andable, Orable, Option } from '../../containers';
 import type { Result } from './index';
 export type State = 'Ok' | 'Err';
 export interface MatchObject<T, E, R> {

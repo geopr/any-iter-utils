@@ -1,4 +1,4 @@
-import type { Collectable } from 'collectors/custom';
+import type { Collectable } from '../../collectors/custom';
 export interface CollectableProxy<T, R> extends Collectable<T> {
     readonly store: R;
 }

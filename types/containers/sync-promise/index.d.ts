@@ -1,4 +1,4 @@
-import type { Unwrapable } from 'containers';
+import type { Unwrapable } from '../../containers';
 import type { Executor, IterValue } from './interface';
 /**
  * implements `Promise` interface but behaves synchronously if possible

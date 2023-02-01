@@ -1,4 +1,4 @@
-import type { TuplesFromIters } from 'combinators';
+import type { TuplesFromIters } from '../../combinators';
 /**
  * Zips the specified `Iterable` objects together
  * It takes one element from every `Iterable` object and creates a tuple from them

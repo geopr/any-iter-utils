@@ -1,4 +1,4 @@
-import { SyncPromise } from 'containers';
+import { SyncPromise } from '../../containers';
 /**
  * iterates over passed any iterable object
  *

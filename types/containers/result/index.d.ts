@@ -1,4 +1,4 @@
-import { Option, SyncIter } from 'containers';
+import { Option, SyncIter } from '../../containers';
 import { ResultError } from './error';
 import type { Traits, MatchObject, State } from './interface';
 export { ResultError };

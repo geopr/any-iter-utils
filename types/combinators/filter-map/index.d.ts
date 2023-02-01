@@ -1,4 +1,4 @@
-import { Option } from 'containers';
+import { Option } from '../../containers';
 /**
  * it works with the `Option` container type
  * if the returned from callback value is Option.Some it will stay in the returnable `IterableIterator`

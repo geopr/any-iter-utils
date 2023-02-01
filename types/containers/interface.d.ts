@@ -1,4 +1,4 @@
-import type { SyncIter } from 'containers';
+import type { SyncIter } from '../containers';
 export interface Matchable<Matches extends string> {
     match<R>(obj: Record<Matches, AnyFunction>): R;
 }

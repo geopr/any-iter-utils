@@ -1,4 +1,4 @@
-import { SyncIter, AsyncIter } from 'containers';
+import { SyncIter, AsyncIter } from '../../../containers';
 /**
  * converts `Iterable` object into `SyncIter`
  *
