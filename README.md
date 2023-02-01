@@ -3,7 +3,7 @@
 ![build](https://img.shields.io/github/actions/workflow/status/geopr/any-iter-utils/build.yml?label=build)
 ![unit tests](https://img.shields.io/github/actions/workflow/status/geopr/any-iter-utils/tests.yml?label=unit%20tests)
 
-This library provides helpers for working with any iterable objects and some useful container types
+Helpers for working with any iterable objects and some useful container types
 
 Highly inspired by python [itertools](https://docs.python.org/3/library/itertools.html),
 rust [std::iter](https://doc.rust-lang.org/std/iter/trait.Iterator.html) and tc39 [any-iter-utils](https://github.com/tc39/proposal-iterator-helpers)
