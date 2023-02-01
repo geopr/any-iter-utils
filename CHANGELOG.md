@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.3](https://github.com/geopr/any-iter-utils/compare/v1.0.2...v1.0.3) (2023-02-01)
+
+
+### Bug Fixes
+
+* correct name of the 'iterator-helpers' proposal in README ([f9fe864](https://github.com/geopr/any-iter-utils/commit/f9fe8646e6747b92215c19979e1508eb220bb4a6))
+
 ## [1.0.2](https://github.com/geopr/any-iter-utils/compare/v1.0.1...v1.0.2) (2023-02-01)
 
 
