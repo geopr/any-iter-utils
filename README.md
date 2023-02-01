@@ -6,7 +6,7 @@
 Helpers for working with any iterable objects and some useful container types
 
 Highly inspired by python [itertools](https://docs.python.org/3/library/itertools.html),
-rust [std::iter](https://doc.rust-lang.org/std/iter/trait.Iterator.html) and tc39 [any-iter-utils](https://github.com/tc39/proposal-iterator-helpers)
+rust [std::iter](https://doc.rust-lang.org/std/iter/trait.Iterator.html) and tc39 [iterator-helpers](https://github.com/tc39/proposal-iterator-helpers)
 
 ### Getting started
 
