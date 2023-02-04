@@ -20,6 +20,34 @@ These types are used by the library and can be helpful if you decide to write yo
 
 See [prelude.d.ts](https://github.com/geopr/any-iter-utils/blob/main/prelude.d.ts)
 
+If you want to use imports as it's shown [below](#combinators) you should have typescript version `>= 4.7` and `moduleResolution` setting
+in `tsconfig.json`:
+
+```json
+{
+  "compilerOptions": {
+    "moduleResolution": "node16" // node16 | nodenext
+  }
+}
+```
+
+Otherwise you will have to import everything just from `any-iter-utils` not being able to specify the path.
+It will look like this:
+
+```ts
+import { map, SyncIter } from 'any-iter-utils';
+```
+
+Instead of this:
+
+```ts
+import { map } from 'any-iter-utils/combinators';
+import { SyncIter } from 'any-iter-utils/containers';
+```
+
+It's because the library uses `exports` field in [package.json](https://github.com/geopr/any-iter-utils/blob/main/package.json#L19)
+which is not supported with other settings of typescript
+
 ### Combinators
 
 The basic usage of any helper would look like this:
