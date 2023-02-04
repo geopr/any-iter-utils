@@ -1,4 +1,4 @@
-import { fromGen, isAsyncIterable } from 'utils';
+import { asyncIIFactory, isAsyncIterable, syncIIFactory } from 'utils';
 
 /**
  * loops through the specified `Iterable` and stores each value
@@ -39,31 +39,39 @@ export function cycle<T>(iterable: AnyIterable<T>): AnyIterableIterator<T> {
 }
 
 function scycle<T>(iterable: Iterable<T>): IterableIterator<T> {
-  return fromGen(function* () {
-    const buffer: any[] = [];
+  const buffer: T[] = [];
 
-    while (true) {
-      for (const value of iterable) {
-        buffer.push(value);
-        yield value;
-      }
+  let iter: Iterator<T> = iterable[Symbol.iterator]();
 
-      yield* buffer;
+  return syncIIFactory(function () {
+    const chunk = iter.next();
+
+    if (chunk.done) {
+      iter = buffer[Symbol.iterator]();
+      return this.next();
     }
+
+    buffer.push(chunk.value);
+
+    return chunk;
   });
 }
 
 function acycle<T>(iterable: AsyncIterable<T>): AsyncIterableIterator<T> {
-  return fromGen(async function* () {
-    const buffer: any[] = [];
+  const buffer: T[] = [];
 
-    while (true) {
-      for await (const value of iterable) {
-        buffer.push(value);
-        yield value;
-      }
+  let iter: AnyIterator<T> = iterable[Symbol.asyncIterator]();
 
-      yield* buffer;
+  return asyncIIFactory(async function () {
+    const chunk = await iter.next();
+
+    if (chunk.done) {
+      iter = buffer[Symbol.iterator]();
+      return this.next();
     }
+
+    buffer.push(chunk.value);
+
+    return chunk;
   });
 }
