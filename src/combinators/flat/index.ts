@@ -1,4 +1,4 @@
-import { fromGen, isAsyncIterable, isIterable, isAnyIterable } from 'utils';
+import { isAsyncIterable, isIterable, isAnyIterable, syncIIFactory, cast, extractIter, asyncIIFactory } from 'utils';
 
 /**
  * checks each value of the specified `Iterable` 
@@ -45,25 +45,63 @@ export function flat<T>(iterable: Iterable<T | Iterable<T>> | AsyncIterable<T | 
 }
 
 function sflat<T>(iterable: Iterable<T | Iterable<T>>): IterableIterator<T> {
-  return fromGen(function* () {
-    for (const value of iterable) {
-      if (isIterable(value)) {
-        yield* value;
+  const mainIter = iterable[Symbol.iterator]();
+
+  let subIter: Nullable<Iterator<T>>;
+
+  return syncIIFactory(cast(function (this: IterableIterator<T | Iterable<T>>) {
+    if (subIter != null) {
+      const chunk = subIter.next();
+
+      if (chunk.done) {
+        subIter = null;
       } else {
-        yield value;
+        return chunk;
       }
     }
-  });
+
+    const chunk = mainIter.next();
+
+    if (chunk.done) {
+      return { done: true, value: undefined };
+    }
+
+    if (isIterable(chunk.value)) {
+      subIter = chunk.value[Symbol.iterator]();
+      return this.next();
+    }
+
+    return chunk;
+  }));
 }
 
 function aflat<T>(iterable: AsyncIterable<T | AnyIterable<T>>): AsyncIterableIterator<T> {
-  return fromGen(async function* () {
-    for await (const value of iterable) {
-      if (isAnyIterable(value)) {
-        yield* value;
+  const mainIter = iterable[Symbol.asyncIterator]();
+
+  let subIter: Nullable<AnyIterator<T>>;
+
+  return asyncIIFactory(cast(async function (this: AsyncIterableIterator<T | AnyIterable<T>>) {
+    if (subIter != null) {
+      const chunk = await subIter.next();
+
+      if (chunk.done) {
+        subIter = null;
       } else {
-        yield value;
+        return chunk;
       }
     }
-  });
+
+    const chunk = await mainIter.next();
+
+    if (chunk.done) {
+      return { done: true, value: undefined };
+    }
+
+    if (isAnyIterable(chunk.value)) {
+      subIter = extractIter(chunk.value);
+      return this.next();
+    }
+
+    return chunk;
+  }));
 }
