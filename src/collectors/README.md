@@ -7,7 +7,7 @@ Each collector accepts any iterable as the first parameter and returns a new cor
 When you see `AnyIterable`, or `Promisify` it means that for `Iterable` a function
 returns `R` and for `AsyncIterable` it returns `Promise<R>`
 
-Note that each collector except [`intoCustom`](#intocustomt-r-extends-collectablet--collectabletiterable-anyiterablet-init-r-promisifyr) 
+Note that each collector except [`intoCustom`](#intocustomt-r-extends-collectablet--collectabletiterable-anyiterablet-init-r-promisifyr-) 
 makes a **shallow copy** of the passed data structure
 
 ### API
