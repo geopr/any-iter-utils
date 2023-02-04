@@ -7,8 +7,8 @@ It will work synchronously if it doesn't deal with any `PromiseLike` objects tha
 
 ```ts
 console.log(1);
-SyncPromise.resolve(2);
-SyncPromise.resolve(SyncPromise.resolve(3));
+SyncPromise.resolve(2).then(console.log);
+SyncPromise.resolve(SyncPromise.resolve(3)).then(console.log);
 console.log(4);
 
 // the output: 1, 2, 3, 4
@@ -18,7 +18,7 @@ The following example demonstratets asynchronous behavior. It starts acting as t
 
 ```ts
 console.log(1);
-SyncPromise.resolve(Promise.resolve(2));
+SyncPromise.resolve(Promise.resolve(2)).then(console.log);
 console.log(3);
 
 // the output: 1, 3, 2
