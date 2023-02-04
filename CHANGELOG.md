@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.4](https://github.com/geopr/any-iter-utils/compare/v1.0.3...v1.0.4) (2023-02-04)
+
+
+### Miscellaneous Chores
+
+* release 1.0.4 ([4c8d2e5](https://github.com/geopr/any-iter-utils/commit/4c8d2e570f8263f5c5c20d443a0347ef50e0c1ad))
+
 ## [1.0.3](https://github.com/geopr/any-iter-utils/compare/v1.0.2...v1.0.3) (2023-02-01)
 
 
